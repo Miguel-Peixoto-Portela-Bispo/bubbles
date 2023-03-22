@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
+}
+main{
+    margin: 1rem auto 1rem;
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid black;
+}
+canvas{
+    width: 30vw;
+}
+#info-area{
+    padding: 1rem;
+    border-left: 1px solid black;
+    width: 30vw;
+    height: 30vw;
+}
+#info-area > h1{
+    text-align: center;
+}
+#info-area > p{
+    position: relative;
+    z-index: 1;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    transition: color 400ms;
+}
+#info-area > p::before{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #0088FF;
+    width: 0;
+    transition: width 400ms;
+}
+#info-area > p:hover{
+    color: white;
+}
+#info-area > p:hover:before{
+    width: 100%;
+}
+#outer{
+    margin: auto;
+    width: fit-content;
+}
+#add-button{
+    z-index: 1;
+    position: relative;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    width: 5rem;
+    height: 3rem;
+    margin-right: 0.5rem;
+    background-color: white;
+    outline: none;
+    border: 1px solid black;
+    overflow: hidden;
+    transition: color 300ms;
+    cursor: pointer;
+}
+#add-button:hover, #add-button:focus{
+    background-color: gray;
+}
+#add-button:active{
+    font-size: 1rem;
+    color: white;
+    background-color: black;
+}
+#key-info{
+    color: rgb(55, 55, 55);
+    text-decoration: underline;
+    font-style: italic;
+}
+@media all and (max-width: 700px){
+    canvas{
+        width: 20vw;
+    }
+    #info-area{
+        overflow-y: scroll;
+        width: 20vw;
+        height: 20vw;
+    }
+}
